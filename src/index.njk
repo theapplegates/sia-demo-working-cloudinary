@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Images with Eleventy Shortcodes</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      img {
+        height: auto;
+        width: 100%;
+        max-width: 58rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Responsive Images with Eleventy Shortcodes Demo</h1>
+    <figure>
+      <img src="{% src 'A_possum_and_a_movie_camera_1943.jpg' %}"
+        srcset="{% srcset 'A_possum_and_a_movie_camera_1943_f4yflt.jpg' %}"
+        sizes="{% defaultSizes %}"
+        alt="An Australian possum climbing a movie camera"
+        width="2953" height="2178">
+      <figcaption>Source: <a href="https://commons.wikimedia.org/wiki/File:A_possum_and_a_movie_camera_1943.jpg">Wikimedia Commons</a> </figcaption>
+    </figure>
+    <figure>
+      <img src="{% src 'develop-preview-ship-point5.jpg' %}"
+        srcset="{% srcset 'develop-preview-ship-point5.jpg' %}"
+        sizes="{% defaultSizes %}"
+        alt="A developer's mug"
+        width="2953" height="2178">
+    </figure>
+    
+  </body>
+</html>
